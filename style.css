@@ -31,7 +31,7 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* Header & Logo (Light background layer to make logo.PNG pop) */
+/* Header & Logo (Light background layer with NO borders) */
 .site-header {
     background: linear-gradient(135deg, #fdfbf7 0%, #f4eee1 100%);
     color: var(--text-main);
@@ -52,10 +52,9 @@ h1, h2, h3, h4 {
 .logo-link {
     display: inline-block;
     line-height: 0;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: 1px solid #e0d5c1;
+    background: transparent;
+    padding: 0;
+    border: none;
 }
 
 .site-logo {
@@ -95,31 +94,8 @@ h1, h2, h3, h4 {
     position: relative;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
     color: var(--white);
-    padding: 6rem 0;
+    padding: 7rem 0;
     text-align: center;
-}
-
-.hero-logo-container {
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.12); /* Color layer transparency */
-    backdrop-filter: blur(6px); /* Frosted glass effect */
-    padding: 15px 25px;
-    border-radius: 8px;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.hero-center-logo {
-    width: 210px; /* Reduced to a clean, balanced size */
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
 .badge {
@@ -136,7 +112,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
     color: var(--white);
 }
@@ -357,8 +333,5 @@ footer {
     }
     .hero-content h2 {
         font-size: 2.1rem;
-    }
-    .hero-center-logo {
-        width: 170px;
     }
 }
