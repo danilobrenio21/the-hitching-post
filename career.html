@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team & Careers | The Hitching Post Casmalia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .career-form-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 6px;
+            box-shadow: 0 15px 40px rgba(43, 37, 32, 0.12), 
+                        inset 0 0 0 1px rgba(197, 160, 89, 0.4);
+            position: relative;
+        }
+        .career-form-container::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px dashed rgba(197, 160, 89, 0.4);
+            pointer-events: none;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            border-radius: 4px;
+            background: var(--white);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(92, 29, 29, 0.2);
+        }
+        .file-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+        .success-banner {
+            display: none;
+            background: rgba(46, 125, 50, 0.15);
+            border-left: 4px solid #2e7d32;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+            color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving Logo Watermark Background Grid -->
+    <div class="bg-grid-container">
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo"><img src="logo.PNG" alt="Watermark Logo">
+        </div>
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo"><img src="logo.PNG" alt="Watermark Logo">
+        </div>
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo"><img src="logo.PNG" alt="Watermark Logo">
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.PNG" alt="The Hitching Post Logo" class="site-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Dinner Menu</a>
+                <a href="wine.html">Wine List</a>
+                <a href="press.html">Sideways & Press</a>
+                <a href="catering.html">Catering</a>
+                <a href="weddings.html">Weddings</a>
+                <a href="shop.html">Gift Shop</a>
+                <a href="career.html" class="active">Join Our Team</a>
+                <a href="contact.html" class="btn-nav">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>Join Our Team</h2>
+            <p>Become part of the historic Hitching Post family in Casmalia, California.</p>
+        </div>
+    </section>
+
+    <!-- Career Application Section -->
+    <section class="content-section container">
+        <div class="career-form-container">
+            <h2>Employment Application</h2>
+            <p class="lead"><strong>Share Your Experience & Passion for Hospitality</strong></p>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">We are always looking for dedicated individuals to join our kitchen, front-of-house, or catering teams. Please fill out the form below. Your application will be sent directly to our hiring department at <strong>workhere1@hitchingpost1.com</strong>.</p>
+
+            <!-- Success Notification Banner -->
+            <div id="successBanner" class="success-banner">
+                <strong>Application Ready to Dispatch!</strong> Your form details have been structured. Your default email client will now open to send your submission directly to <strong>workhere1@hitchingpost1.com</strong> with your attached resume.
+            </div>
+
+            <form id="careerForm" onsubmit="handleCareerSubmission(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" required placeholder="Enter your full legal name">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required placeholder="(805) 555-0199">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Position Applied For *</label>
+                    <select id="position" required>
+                        <option value="">Select a role...</option>
+                        <option value="Line Cook / Pitmaster">Line Cook / Open-Fire Pitmaster</option>
+                        <option value="Server / Waitstaff">Server / Front-of-House Waitstaff</option>
+                        <option value="Host / Hostess">Host / Hostess</option>
+                        <option value="Catering Crew">Catering & Event Crew</option>
+                        <option value="Kitchen Support / Dishwasher">Kitchen Support / Utility</option>
+                        <option value="Other">Other Position</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Relevant Work Experience *</label>
+                    <textarea id="experience" rows="4" required placeholder="Briefly describe your previous restaurant, customer service, or professional background..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="resumeFile">Upload Resume (PDF, DOC, DOCX - Max 10MB) *</label>
+                    <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" required onchange="validateFileSize(this)">
+                    <div class="file-hint">Note: File size must not exceed 10 megabytes.</div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <button type="submit" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1rem;">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 The Hitching Post, Casmalia, CA. The Ostini Family. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Career Form Logic Script -->
+    <script>
+        function validateFileSize(input) {
+            if (input.files && input.files[0]) {
+                const fileSizeMB = input.files[0].size / (1024 * 1024);
+                if (fileSizeMB > 10) {
+                    alert("File size exceeds 10MB! Please select a smaller resume file.");
+                    input.value = ""; // Clear the selection
+                }
+            }
+        }
+
+        function handleCareerSubmission(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const position = document.getElementById("position").value;
+            const experience = document.getElementById("experience").value;
+            const resumeInput = document.getElementById("resumeFile");
+            const fileName = resumeInput.files[0] ? resumeInput.files[0].name : "No file attached";
+
+            // Display success banner
+            document.getElementById("successBanner").style.display = "block";
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+
+            // Construct mailto link to route directly to workhere1@hitchingpost1.com
+            const recipient = "workhere1@hitchingpost1.com";
+            const subject = encodeURIComponent(`Job Application: ${position} - ${name}`);
+            const body = encodeURIComponent(
+                `New Job Application Submission:\n\n` +
+                `Full Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Phone: ${phone}\n` +
+                `Position: ${position}\n\n` +
+                `Work Experience:\n${experience}\n\n` +
+                `Attached Resume File Name: ${fileName}\n` +
+                `(Note: Please remember to attach your resume file directly in your email client before hitting send.)`
+            );
+
+            // Open mail client after brief delay so applicant sees confirmation banner
+            setTimeout(() => {
+                window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+            }, 1500);
+        }
+    </script>
+    <script src="main.js" defer></script>
+</body>
+</html>
