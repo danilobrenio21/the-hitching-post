@@ -31,7 +31,7 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* Header & Logo (Light background layer with NO borders) */
+/* Header & Logo */
 .site-header {
     background: linear-gradient(135deg, #fdfbf7 0%, #f4eee1 100%);
     color: var(--text-main);
@@ -160,7 +160,7 @@ h1, h2, h3, h4 {
     color: var(--text-main);
 }
 
-/* About Section */
+/* About Section & Custom Image Insert */
 .about-section {
     padding: 5rem 0;
     text-align: center;
@@ -182,6 +182,17 @@ h1, h2, h3, h4 {
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
+}
+
+.content-image-container {
+    margin: 1.5rem 0 2rem 0;
+}
+
+.section-custom-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: contain;
 }
 
 .about-content p {
@@ -243,7 +254,7 @@ h1, h2, h3, h4 {
     color: #555;
 }
 
-/* Sideways Section */
+/* Sideways & Press Section */
 .sideways-section {
     padding: 5rem 0;
 }
@@ -262,10 +273,8 @@ h1, h2, h3, h4 {
     border-left: 4px solid var(--secondary-color);
 }
 
-.sideways-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+.card-img-container {
+    margin-bottom: 1.25rem;
 }
 
 .sideways-card p {
