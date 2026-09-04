@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #5c1d1d; /* Deep Tavern Burgundy */
-    --secondary-color: #c5a059; /* Muted Antique Gold */
-    --accent-color: #3b2314; /* Deep Roasted Wood */
+    --primary-color: #5c1d1d; 
+    --secondary-color: #c5a059; 
+    --accent-color: #3b2314; 
     --dark-bg: #171412;
-    --paper-bg: #f5eedc; /* Warm Aged Parchment tone */
-    --card-bg: #fcf8ee;
+    --paper-bg: #f5eedc; 
+    --card-bg: rgba(252, 248, 238, 0.94); /* Slightly translucent for background depth */
     --text-main: #2b2520;
     --text-muted: #5c5249;
     --white: #ffffff;
@@ -24,14 +24,69 @@ html {
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: var(--text-main);
-    /* Rich nostalgic background texture effect simulating old paper / aged walls */
-    background-color: var(--paper-bg);
-    background-image: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, rgba(59, 35, 20, 0.15) 100%), 
-                      url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=20');
-    background-blend-mode: overlay;
-    background-attachment: fixed;
+    background-color: var(--dark-bg);
     line-height: 1.8;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* --- MOVING BACKGROUND IMAGE GRID --- */
+.bg-grid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    opacity: 0.35; /* Keeps it subtle so text remains fully legible */
+    filter: sepia(40%) contrast(110%);
+}
+
+.bg-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 320px;
+}
+
+.bg-column:nth-child(odd) {
+    animation: scrollUp 35s linear infinite;
+}
+
+.bg-column:nth-child(even) {
+    animation: scrollDown 40s linear infinite;
+}
+
+.bg-column img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+@keyframes scrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+}
+
+/* Dark atmospheric vignette overlay on top of the moving grid */
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(23,20,18,0.7) 0%, rgba(10,8,7,0.92) 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 h1, h2, h3, h4 {
@@ -141,10 +196,10 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
 }
 
-/* Dramatic Hero Banners with Deep Vignette */
+/* Dramatic Hero Banners */
 .page-hero {
     position: relative;
-    background: linear-gradient(rgba(23, 20, 18, 0.8), rgba(23, 20, 18, 0.9)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    background: rgba(23, 20, 18, 0.75);
     color: var(--white);
     padding: 6rem 0;
     text-align: center;
@@ -180,7 +235,7 @@ h1, h2, h3, h4 {
     transform: translateY(0);
 }
 
-/* Nostalgic Content Boxes with Antique Border Styling */
+/* Nostalgic Content Boxes */
 .content-section {
     padding: 5rem 0;
 }
@@ -189,10 +244,11 @@ h1, h2, h3, h4 {
     max-width: 850px;
     margin: 0 auto;
     background: var(--card-bg);
+    backdrop-filter: blur(8px);
     padding: 4rem;
     border-radius: 6px;
-    box-shadow: 0 15px 40px rgba(43, 37, 32, 0.12), 
-                inset 0 0 0 1px rgba(197, 160, 89, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 
+                inset 0 0 0 1px rgba(197, 160, 89, 0.4);
     position: relative;
     transition: var(--transition);
 }
@@ -217,7 +273,7 @@ h1, h2, h3, h4 {
 
 .lead {
     font-size: 1.25rem;
-    color: var(--secondary-color);
+    color: #8c6e31;
     margin-bottom: 1.8rem;
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -234,7 +290,6 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-/* Vintage Photo Frame Effect */
 .history-img {
     max-width: 350px;
     width: 100%;
@@ -243,7 +298,7 @@ h1, h2, h3, h4 {
     object-fit: contain;
     padding: 8px;
     background: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 0 2px var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 0 2px var(--secondary-color);
     transition: transform 0.5s ease;
 }
 
@@ -251,21 +306,20 @@ h1, h2, h3, h4 {
     transform: scale(1.03) rotate(1deg);
 }
 
-/* Aged Card Grid Elements */
+/* Card Elements */
 .menu-item, .review-card, .sideways-card {
     background: var(--card-bg) !important;
-    border: 1px solid rgba(197, 160, 89, 0.3) !important;
-    box-shadow: 0 6px 20px rgba(43, 37, 32, 0.08) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
     transition: var(--transition);
 }
 
 .menu-item:hover, .review-card:hover, .sideways-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(43, 37, 32, 0.15) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
     border-color: var(--secondary-color) !important;
 }
 
-/* Modern Interactive Buttons with Old-West Touch */
 .btn {
     display: inline-block;
     padding: 0.85rem 2rem;
@@ -304,7 +358,6 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* Keyframe Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -316,7 +369,6 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Nostalgic Deep Footer */
 footer {
     background-color: var(--dark-bg);
     color: #b3a58e;
