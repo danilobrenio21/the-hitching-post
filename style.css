@@ -4,7 +4,7 @@
     --accent-color: #3b2314; 
     --dark-bg: #171412;
     --paper-bg: #f5eedc; 
-    --card-bg: #fcf8ee; /* Solid warm parchment so text is 100% visible */
+    --card-bg: #fcf8ee; 
     --text-main: #2b2520;
     --text-muted: #5c5249;
     --white: #ffffff;
@@ -24,13 +24,13 @@ html {
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: var(--text-main);
-    background-color: var(--dark-bg);
+    background-color: var(--paper-bg);
     line-height: 1.8;
     overflow-x: hidden;
     position: relative;
 }
 
-/* --- MOVING BACKGROUND IMAGE GRID (Lighter Shadow Overlay) --- */
+/* --- LOGO WATERMARK MOVING BACKGROUND --- */
 .bg-grid-container {
     position: fixed;
     top: 0;
@@ -40,31 +40,32 @@ body {
     z-index: -2;
     overflow: hidden;
     display: flex;
-    gap: 20px;
-    opacity: 0.45; /* Made slightly more visible */
-    filter: sepia(30%) contrast(105%);
+    justify-content: space-around;
+    gap: 40px;
+    opacity: 0.12; /* Subtle watermark effect so text remains completely clear */
+    pointer-events: none;
 }
 
 .bg-column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    min-width: 320px;
+    gap: 50px;
+    min-width: 200px;
 }
 
 .bg-column:nth-child(odd) {
-    animation: scrollUp 35s linear infinite;
+    animation: scrollUp 45s linear infinite;
 }
 
 .bg-column:nth-child(even) {
-    animation: scrollDown 40s linear infinite;
+    animation: scrollDown 50s linear infinite;
 }
 
 .bg-column img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 4px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 @keyframes scrollUp {
@@ -75,18 +76,6 @@ body {
 @keyframes scrollDown {
     0% { transform: translateY(-50%); }
     100% { transform: translateY(0); }
-}
-
-/* Much lighter overlay so background images peek through nicely */
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(23, 20, 18, 0.55); 
-    z-index: -1;
-    pointer-events: none;
 }
 
 h1, h2, h3, h4 {
@@ -100,9 +89,9 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* --- LIGHTER HEADER SO LOGO.PNG IS FULLY VISIBLE --- */
+/* Header */
 .site-header {
-    background: rgba(245, 238, 220, 0.96); /* Warm parchment light header */
+    background: rgba(245, 238, 220, 0.96);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: var(--text-main);
@@ -111,7 +100,7 @@ h1, h2, h3, h4 {
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--secondary-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
 }
 
@@ -195,15 +184,15 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 15px rgba(92, 29, 29, 0.3);
 }
 
-/* --- HERO SECTION WITH CLASSIC COVER PHOTO RESTORED --- */
+/* Hero Section */
 .page-hero {
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    background: linear-gradient(135deg, #171412 0%, #2c1810 100%);
     color: var(--white);
-    padding: 7rem 0;
+    padding: 6rem 0;
     text-align: center;
     border-bottom: 4px solid var(--secondary-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     overflow: hidden;
 }
 
@@ -211,7 +200,7 @@ h1, h2, h3, h4 {
     font-size: 3rem;
     margin-bottom: 0.75rem;
     color: var(--white);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     animation: fadeInUp 0.8s ease forwards;
 }
 
@@ -234,7 +223,7 @@ h1, h2, h3, h4 {
     transform: translateY(0);
 }
 
-/* Solid Nostalgic Content Boxes for High Text Visibility */
+/* Content Boxes */
 .content-section {
     padding: 5rem 0;
 }
@@ -245,8 +234,8 @@ h1, h2, h3, h4 {
     background: var(--card-bg);
     padding: 4rem;
     border-radius: 6px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35), 
-                inset 0 0 0 1px rgba(197, 160, 89, 0.5);
+    box-shadow: 0 15px 40px rgba(43, 37, 32, 0.12), 
+                inset 0 0 0 1px rgba(197, 160, 89, 0.4);
     position: relative;
     transition: var(--transition);
 }
@@ -258,7 +247,7 @@ h1, h2, h3, h4 {
     left: 8px;
     right: 8px;
     bottom: 8px;
-    border: 1px dashed rgba(197, 160, 89, 0.5);
+    border: 1px dashed rgba(197, 160, 89, 0.4);
     pointer-events: none;
 }
 
@@ -296,7 +285,7 @@ h1, h2, h3, h4 {
     object-fit: contain;
     padding: 8px;
     background: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 0 2px var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 0 0 2px var(--secondary-color);
     transition: transform 0.5s ease;
 }
 
@@ -304,17 +293,17 @@ h1, h2, h3, h4 {
     transform: scale(1.03) rotate(1deg);
 }
 
-/* Card Elements with Solid Parchment Background */
+/* Card Elements */
 .menu-item, .review-card, .sideways-card {
     background: var(--card-bg) !important;
-    border: 1px solid rgba(197, 160, 89, 0.5) !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(43, 37, 32, 0.08) !important;
     transition: var(--transition);
 }
 
 .menu-item:hover, .review-card:hover, .sideways-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 12px 30px rgba(43, 37, 32, 0.15) !important;
     border-color: var(--primary-color) !important;
 }
 
