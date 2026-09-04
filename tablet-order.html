@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Translate Script API -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
         .tablet-container {
             max-width: 1000px;
@@ -113,8 +115,16 @@
             </a>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="menu.html">Dinner Menu</a>
-                <a href="tablet-order.html" class="active btn-nav">Table Tablet Portal</a>
+                <a href="wine.html">Wine List</a>
+                <a href="press.html">Sideways & Press</a>
+                <a href="catering.html">Catering</a>
+                <a href="weddings.html">Weddings</a>
+                <a href="shop.html">Gift Shop</a>
+                <a href="career.html">Careers</a>
+                <a href="tablet-order.html" class="active">Tablet Order</a>
+                <a href="contact.html" class="btn-nav">Contact</a>
             </nav>
         </div>
     </header>
@@ -248,7 +258,6 @@
                 return;
             }
 
-            // Trigger simulated alert to waiter station
             const total = cart.reduce((sum, item) => sum + item.price, 0);
             document.getElementById("modalMessage").innerText = `Table #${tableNum} your order has been dispatched automatically to your server! Total amount: $${total}.00`;
             document.getElementById("successModal").style.display = "flex";
