@@ -11,156 +11,58 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header class="site-header">
         <div class="container nav-container">
-            <a href="#home" class="logo-link">
+            <a href="index.html" class="logo-link">
                 <img src="logo.PNG" alt="The Hitching Post Logo" class="site-logo">
             </a>
             <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#menu">Dinner Menu</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#sideways">Sideways & Press</a>
-                <a href="#contact" class="btn-nav">Reservations</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Dinner Menu</a>
+                <a href="wine.html">Wine List</a>
+                <a href="press.html">Sideways & Press</a>
+                <a href="catering.html">Catering</a>
+                <a href="weddings.html">Weddings</a>
+                <a href="shop.html">Gift Shop</a>
+                <a href="contact.html" class="btn-nav">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="badge">Celebrating Over 70 Years</span>
-            <h2>The Birthplace of California-Style Barbeque</h2>
-            <p>Brought to perfection by pioneers. Serving choice, aged beef over open live-oak fires in a 100-year-old historic building.</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">View Dinner Menu</a>
-                <a href="#contact" class="btn btn-secondary">Call for Reservations</a>
+    <section class="page-hero" style="padding: 8rem 0;">
+        <div class="container">
+            <span style="background-color: var(--secondary-color); color: var(--dark-bg); padding: 0.3rem 0.9rem; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 3px; display: inline-block; margin-bottom: 1.2rem;">Celebrating Over 70 Years</span>
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">The Birthplace of California-Style Barbeque</h2>
+            <p style="max-width: 650px; margin: 0 auto 2.5rem auto; color: #d1d1d1;">Brought to perfection by pioneers. Serving choice, aged beef over open live-oak fires in a 100-year-old historic building.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="menu.html" class="btn btn-primary">View Dinner Menu</a>
+                <a href="contact.html" class="btn btn-secondary">Reservations</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section container">
-        <div class="about-content">
+    <section class="content-section container">
+        <div class="content-box" style="text-align: center;">
             <h2>Old West Hospitality Since 1952</h2>
             <p class="lead"><strong>Your Hosts: The Ostini Family</strong></p>
             <div class="content-image-container">
-                <img src="history.PNG" alt="History of The Hitching Post" class="section-custom-img history-img">
+                <img src="history.PNG" alt="History of The Hitching Post" class="history-img">
             </div>
-            <p>Casmalia, California, a former cow-town of the Old West, is where California-style barbequeing was brought to perfection. The Hitching Post brings this live-oak BBQ to perfection, bringing choice, aged beef to the ultimate gourmet flavor and tenderness while keeping alive the traditions of the old romantic West.</p>
-            <p>The weatherworn walls of our 100-year-old building are crammed with memories that induce an atmosphere of Western nostalgia. Trade the pressures of the fast, modern world for an evening of authentic Old West hospitality.</p>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <h2>The Dinner Menu Highlights</h2>
-            <p class="section-sub">Open-fire barbecue at its very highest level.</p>
-            
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h4>Choice Aged Steaks</h4>
-                    <p class="price">Open-Fire Grilled</p>
-                    <p class="desc">Hand-cut steaks cooked over an open live-oak wood fire, capturing the ultimate smoky flavor and tenderness.</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Santa Maria Style BBQ</h4>
-                    <p class="price">Traditional Recipe</p>
-                    <p class="desc">Slow-cooked with indirect heat over glowing oak embers, honoring decades of local Central Coast heritage.</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Seafood Selections</h4>
-                    <p class="price">Fresh Catch</p>
-                    <p class="desc">Marinated and flame-broiled seafood options paired expertly with local Central Coast wines.</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Hartley-Ostini Wines</h4>
-                    <p class="price">Locally Crafted</p>
-                    <p class="desc">Handcrafted local wines designed to complement our rich, smoky barbecue flavors.</p>
-                </div>
+            <p>Casmalia, California, a former cow-town of the Old West, is where California-style barbequeing was brought to perfection. The Hitching Post brings this live-oak BBQ to perfection, bringing choice, aged beef to the ultimate gourmet flavor and tenderness.</p>
+            <div style="margin-top: 2rem;">
+                <a href="about.html" class="btn btn-primary">Read Full History</a>
             </div>
         </div>
     </section>
 
-    <!-- Google Reviews Section -->
-    <section id="reviews" class="reviews-section container">
-        <div class="reviews-header">
-            <h2>What Our Guests Are Saying</h2>
-            <p class="section-sub">Top ratings and reviews from our community and Google listings.</p>
-            <div class="google-rating-badge">
-                <span class="stars">★★★★★</span>
-                <span class="rating-text"><strong>4.7 Stars</strong> from over 1,250+ Google Reviews</span>
-            </div>
-        </div>
-
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The atmosphere is classic, warm, and completely unpretentious. Red tablecloths, a lively dining room, and the open grill with steaks cooking over live fire gave the whole place a timeless charm. The filet was tender and buttery, while the ribeye was rich, juicy, and packed with flavor!"</p>
-                <p class="reviewer-name">— Google Reviewer</p>
-            </div>
-
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"What really makes this place stand out is everything included with dinner. The meal started with their classic relish tray, followed by shrimp cocktail and a fresh salad, ending with ice cream. It's a complete dining experience that reminds you why legendary steakhouses become institutions."</p>
-                <p class="reviewer-name">— Google Reviewer</p>
-            </div>
-
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"An absolute landmark. If you love traditional steakhouses, live-fire cooking, and authentic California road-trip dining, the Hitching Post absolutely lives up to its reputation. One of the most memorable meals we've had in a long time!"</p>
-                <p class="reviewer-name">— Google Reviewer</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sideways & Press Section -->
-    <section id="sideways" class="sideways-section container">
-        <div class="sideways-grid">
-            <div class="sideways-card">
-                <div class="card-img-container">
-                    <img src="sideways.PNG" alt="Sideways Feature" class="section-custom-img press-img">
-                </div>
-                <p>The Academy Award-winning film <em>Sideways</em> by Alexander Payne features the wines of our area. While set at our brother restaurant Hitching Post 2 in Buellton, our family and wines are deeply tied to the movie's legacy!</p>
-            </div>
-            <div class="sideways-card">
-                <div class="card-img-container">
-                    <img src="forbes.PNG" alt="Forbes Magazine Feature" class="section-custom-img press-img">
-                </div>
-                <p>Featured together as one of <strong>"10 Great BBQ Joints in the USA"</strong>, noted as a bridge between Argentinean parillada cooking and Southern barbecue—making these among the finest steakhouses in the country.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Hours Section -->
-    <section id="contact" class="contact-section">
-        <div class="container contact-grid">
-            <div>
-                <h2>Hours & Location</h2>
-                <p><strong>Dinner Hours:</strong></p>
-                <p>Monday through Saturday: 4:30 to 9:30 p.m.</p>
-                <p>Sunday: 4:00 to 9:00 p.m.</p>
-                <br>
-                <p><strong>Location:</strong> Casmalia, California</p>
-                <p><strong>Phone for Reservations & Shipping:</strong> (805) 937-6151 or (866) 879-4088</p>
-            </div>
-            <div class="contact-card-box">
-                <h3>Plan Your Visit</h3>
-                <p>Experience world-class open-fire barbecue and Old West heritage. Call ahead to secure your table or arrange shipping.</p>
-                <a href="tel:8059376151" class="btn btn-primary">Call (805) 937-6151</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 The Hitching Post, Casmalia, CA. The Ostini Family. All rights reserved. Concept redesign layout.</p>
+            <p>&copy; 2026 The Hitching Post, Casmalia, CA. The Ostini Family. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- JavaScript for Smooth Animations -->
+    <script src="main.js" defer></script>
 </body>
 </html>
