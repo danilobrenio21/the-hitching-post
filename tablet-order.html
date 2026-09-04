@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Store Tablet Ordering | The Hitching Post Casmalia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .tablet-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(43, 37, 32, 0.15);
+            border: 2px solid var(--secondary-color);
+        }
+        .table-input-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            background: rgba(197, 160, 89, 0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2.5rem;
+        }
+        .table-input-group input {
+            padding: 0.75rem 1rem;
+            font-size: 1.2rem;
+            width: 120px;
+            text-align: center;
+            border: 2px solid var(--secondary-color);
+            border-radius: 4px;
+            background: var(--white);
+            font-weight: bold;
+        }
+        .menu-grid-tablet {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .tablet-item-card {
+            background: var(--white);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 1.5rem;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .tablet-item-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+        .tablet-item-card .price {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .order-summary-box {
+            background: #171412;
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .order-alert-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            border: 3px solid var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving Logo Watermark Background Grid -->
+    <div class="bg-grid-container">
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo"><img src="logo.PNG" alt="Watermark Logo">
+        </div>
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo"><img src="logo.PNG" alt="Watermark Logo">
+        </div>
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo"><img src="logo.PNG" alt="Watermark Logo">
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.PNG" alt="The Hitching Post Logo" class="site-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Dinner Menu</a>
+                <a href="tablet-order.html" class="active btn-nav">Table Tablet Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tablet Order Interface -->
+    <section class="content-section container">
+        <div class="tablet-container">
+            <h2 style="color: var(--primary-color); text-align: center; font-size: 2.4rem; margin-bottom: 0.5rem;">Guest Table Ordering Portal</h2>
+            <p class="lead" style="text-align: center;">Select your items and notify your server instantly.</p>
+
+            <!-- Table Number Input -->
+            <div class="table-input-group">
+                <label for="tableNumber" style="font-size: 1.2rem; font-family: 'Playfair Display', serif; font-weight: bold; color: var(--primary-color);">Enter Your Table Number:</label>
+                <input type="number" id="tableNumber" min="1" max="99" placeholder="Ex: 4">
+            </div>
+
+            <h3 style="color: var(--primary-color); margin-bottom: 1.2rem; font-family: 'Playfair Display', serif;">Quick-Order Specialties</h3>
+            
+            <!-- Menu Selection Grid -->
+            <div class="menu-grid-tablet">
+                <div class="tablet-item-card">
+                    <div>
+                        <h4>Top Sirloin (10oz)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Open-fire grilled over local red oak wood.</p>
+                    </div>
+                    <div>
+                        <div class="price">$46.00</div>
+                        <button class="btn btn-primary" onclick="addItem('10oz Top Sirloin', 46)">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="tablet-item-card">
+                    <div>
+                        <h4>Filet Mignon (8oz)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Tender and buttery cut from Midwest beef.</p>
+                    </div>
+                    <div>
+                        <div class="price">$57.00</div>
+                        <button class="btn btn-primary" onclick="addItem('8oz Filet Mignon', 57)">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="tablet-item-card">
+                    <div>
+                        <h4>Pork Baby Back Ribs (Full)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Slow cooked with indirect heat over glowing oak embers.</p>
+                    </div>
+                    <div>
+                        <div class="price">$45.00</div>
+                        <button class="btn btn-primary" onclick="addItem('Baby Back Ribs (Full)', 45)">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="tablet-item-card">
+                    <div>
+                        <h4>Artichoke Appetizer</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Steamed then grilled to perfection.</p>
+                    </div>
+                    <div>
+                        <div class="price">$17.00</div>
+                        <button class="btn btn-primary" onclick="addItem('Artichoke Appetizer', 17)">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary & Dispatch Box -->
+            <div class="order-summary-box">
+                <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Current Table Cart</h3>
+                <div id="cartItems" style="margin-bottom: 1rem; font-style: italic; color: #ccc;">No items selected yet.</div>
+                <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem;">Total: $<span id="cartTotal">0.00</span></div>
+                <button class="btn btn-primary" style="background-color: var(--secondary-color); color: var(--dark-bg); font-weight: bold; font-size: 1.1rem; padding: 1rem 2.5rem;" onclick="sendOrderToWaiter()">Send Order to Waiter</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal Popup -->
+    <div id="successModal" class="order-alert-modal">
+        <div class="modal-content">
+            <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Order Sent Successfully!</h3>
+            <p id="modalMessage" style="margin-bottom: 1.5rem; color: var(--text-main); font-size: 1.1rem;"></p>
+            <button class="btn btn-primary" onclick="closeModal()">OK / New Order</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 The Hitching Post, Casmalia, CA. Store Tablet Interface.</p>
+        </div>
+    </footer>
+
+    <!-- Tablet Order Script -->
+    <script>
+        let cart = [];
+
+        function addItem(name, price) {
+            cart.push({ name, price });
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartContainer = document.getElementById("cartItems");
+            const totalContainer = document.getElementById("cartTotal");
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "No items selected yet.";
+                totalContainer.innerText = "0.00";
+                return;
+            }
+
+            let html = "<ul style='list-style: none; padding: 0;'>";
+            let total = 0;
+            cart.forEach((item, index) => {
+                html += `<li style='margin-bottom: 0.3rem;'>${item.name} - $${item.price}.00</li>`;
+                total += item.price;
+            });
+            html += "</ul>";
+
+            cartContainer.innerHTML = html;
+            totalContainer.innerText = total.toFixed(2);
+        }
+
+        function sendOrderToWaiter() {
+            const tableNum = document.getElementById("tableNumber").value;
+            if (!tableNum) {
+                alert("Please enter your Table Number before sending the order!");
+                return;
+            }
+            if (cart.length === 0) {
+                alert("Please select at least one menu item!");
+                return;
+            }
+
+            // Trigger simulated alert to waiter station
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById("modalMessage").innerText = `Table #${tableNum} your order has been dispatched automatically to your server! Total amount: $${total}.00`;
+            document.getElementById("successModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("successModal").style.display = "none";
+            cart = [];
+            updateCartDisplay();
+            document.getElementById("tableNumber").value = "";
+        }
+    </script>
+    <script src="main.js" defer></script>
+</body>
+</html>
