@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Menu | The Hitching Post Casmalia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Moving Logo Watermark Background Grid -->
+    <div class="bg-grid-container">
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+        </div>
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+        </div>
+        <div class="bg-column">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+            <img src="logo.PNG" alt="Watermark Logo">
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.PNG" alt="The Hitching Post Logo" class="site-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html" class="active">Dinner Menu</a>
+                <a href="wine.html">Wine List</a>
+                <a href="press.html">Sideways & Press</a>
+                <a href="catering.html">Catering</a>
+                <a href="weddings.html">Weddings</a>
+                <a href="shop.html">Gift Shop</a>
+                <a href="contact.html" class="btn-nav">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>The Dinner Menu</h2>
+            <p>Prepared on our famous indoor barbecue pit using local red oak wood.</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="content-section container">
+        <div class="content-box" style="max-width: 900px;">
+            <h2>Dining Experience & Specialties</h2>
+            <p class="lead"><strong>Beef, Our Specialty Since 1952</strong></p>
+            
+            <p style="text-align: center; color: var(--text-muted); font-style: italic; margin-bottom: 2.5rem;">
+                Dinners include fresh vegetable tray, bay shrimp cocktail, dinner salad, choice of home cut French fries, baked potato, or grilled vegetables, garlic bread, ice cream or sherbet, and coffee or tea.
+            </p>
+
+            <!-- Appetizers Grid -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Appetizers</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem;">
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Artichoke</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$17</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Try it once and you'll know why it's our most popular appetizer - steamed then grilled</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Linguica</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$15</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Portuguese sausage, a local favorite</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Fresh Asparagus</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$15</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Grilled then seasoned</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Mushrooms</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$15</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Buttered and HP seasoned</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Shrimp</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$16</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Skewered with grilled veggies</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Scallops</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$22</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Buttered and HP seasoned</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Baby Back Pork Ribs</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$18</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Half rack</p>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Texas Bob White Quail</strong> <span style="float: right; color: var(--primary-color); font-weight: bold;">$16</span>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Small and tasty</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steaks Section -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Steaks</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Each steak hand cut by our chefs. To expedite your dinners for large parties, each guest will receive a baked potato as their side.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Top Sirloin</strong>
+                        <ul style="list-style: none; margin-top: 0.5rem; font-size: 0.95rem;">
+                            <li>7oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$40</span></li>
+                            <li>10oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$46</span></li>
+                            <li>15oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$62</span></li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>New York</strong>
+                        <ul style="list-style: none; margin-top: 0.5rem; font-size: 0.95rem;">
+                            <li>10oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$58</span></li>
+                            <li>15oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$75</span></li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Filet Mignon</strong>
+                        <ul style="list-style: none; margin-top: 0.5rem; font-size: 0.95rem;">
+                            <li>5oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$44</span></li>
+                            <li>8oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$57</span></li>
+                            <li>12oz. <span style="float: right; color: var(--primary-color); font-weight: bold;">$73</span></li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--light-bg, #f5eedc); padding: 1rem; border-radius: 4px;">
+                        <strong>Specialty Cuts</strong>
+                        <ul style="list-style: none; margin-top: 0.5rem; font-size: 0.95rem;">
+                            <li>T-bone (22oz.) <span style="float: right; color: var(--primary-color); font-weight: bold;">$78</span></li>
+                            <li>Rib Eye (14oz) <span style="float: right; color: var(--primary-color); font-weight: bold;">$68</span></li>
+                            <li>Bone-In Rib Chop (30-32oz) <span style="float: right; color: var(--primary-color); font-weight: bold;">$95</span></li>
+                        </ul>
+                        <p style="font-size: 0.75rem; color: var(--primary-color); margin-top: 0.3rem;">(no medium well or well done, please)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pork, Poultry and Lamb & Seafood -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Pork, Poultry and Lamb</h3>
+                    <ul style="list-style: none; display: grid; gap: 0.75rem;">
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">All Natural Pork Chop <span style="float: right; color: var(--primary-color); font-weight: bold;">$41</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Pork Baby Back Ribs (full rack) <span style="float: right; color: var(--primary-color); font-weight: bold;">$45</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">California Natural Chicken Breast <span style="float: right; color: var(--primary-color); font-weight: bold;">$35</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Texas Prime Bob White Quail (2) <span style="float: right; color: var(--primary-color); font-weight: bold;">$46</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">New Zealand Rack of Lamb <span style="float: right; color: var(--primary-color); font-weight: bold;">$58</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Half BBQ Chicken (Sunday only) <span style="float: right; color: var(--primary-color); font-weight: bold;">$35</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Seafood & Combinations</h3>
+                    <ul style="list-style: none; display: grid; gap: 0.75rem;">
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Mexican White Shrimp <span style="float: right; color: var(--primary-color); font-weight: bold;">$40</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Fresh Halibut <span style="float: right; color: var(--primary-color); font-weight: bold;">$55</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Wild Harvested Scallops <span style="float: right; color: var(--primary-color); font-weight: bold;">$55</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Australian Lobster Tail <span style="float: right; color: var(--primary-color); font-weight: bold;">$81</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Filet Mignon & Lobster Tail <span style="float: right; color: var(--primary-color); font-weight: bold;">$120</span></li>
+                        <li style="background: var(--light-bg, #f5eedc); padding: 0.75rem; border-radius: 4px;">Top Sirloin & Scallops <span style="float: right; color: var(--primary-color); font-weight: bold;">$64</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Twilight & Children -->
+            <div style="background: rgba(197, 160, 89, 0.1); padding: 2rem; border-radius: 6px; border-left: 4px solid var(--secondary-color);">
+                <h3 style="color: var(--primary-color); font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Twilight Menu & Children's Selections</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;"><strong>Twilight Menu:</strong> Complete dinners served nightly until 6:00pm (Chicken Breast $29 | 10oz Top Sirloin $43 | Pork Chop $40 | White Shrimp $38)</p>
+                <p style="font-size: 0.95rem; color: var(--text-muted);"><strong>Children's Menu ($12.95):</strong> Choice of steak or chicken for guests 10 years old and under. Extra plate charge is $18.</p>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 3rem;">All facets of the information on this page are subject to change without notice at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 The Hitching Post, Casmalia, CA. The Ostini Family. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Smooth Animations -->
+    <script src="main.js" defer></script>
+</body>
+</html>
