@@ -188,7 +188,6 @@ h1, h2, h3, h4 {
     margin: 1.5rem 0 2rem 0;
 }
 
-/* Balanced sizing for history image */
 .history-img {
     max-width: 320px;
     width: 100%;
@@ -257,6 +256,85 @@ h1, h2, h3, h4 {
     color: #555;
 }
 
+/* Google Reviews Section Styling */
+.reviews-section {
+    padding: 5rem 0;
+    background-color: #f7f2ea;
+    border-bottom: 1px solid #eae3d5;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.reviews-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.google-rating-badge {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e0d5c1;
+}
+
+.google-rating-badge .stars {
+    color: #fbbc04; /* Google star gold */
+    letter-spacing: 2px;
+}
+
+.rating-text {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border-top: 4px solid var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-stars {
+    color: #fbbc04;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.reviewer-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Sideways & Press Section */
 .sideways-section {
     padding: 5rem 0;
@@ -280,7 +358,6 @@ h1, h2, h3, h4 {
     margin-bottom: 1.25rem;
 }
 
-/* Balanced sizing for press/sideways images */
 .press-img {
     max-width: 180px;
     width: 100%;
