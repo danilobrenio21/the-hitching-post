@@ -12,23 +12,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 2. Scroll Reveal Animation Logic
-    const observerOptions = {
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
+    // 2. Mobile Menu Toggle Logic
+    const header = document.querySelector(".site-header .nav-container");
+    if (header && !document.querySelector(".menu-toggle")) {
+        const toggleBtn = document.createElement("button");
+        toggleBtn.className = "menu-toggle";
+        toggleBtn.innerHTML = "&#9776;"; // Hamburger icon
+        toggleBtn.setAttribute("aria-label", "Toggle navigation menu");
+        
+        toggleBtn.addEventListener("click", () => {
+            const links = document.querySelector(".nav-links");
+            if (links) links.classList.toggle("active");
         });
-    }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.content-box, .page-hero h2, .page-hero p');
-    revealElements.forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
+        header.insertBefore(toggleBtn, document.querySelector(".nav-links"));
+    }
+
+    // 3. Insert Google Translate Widget container at bottom left if not present
+    if (!document.getElementById("google_translate_element")) {
+        const translateDiv = document.createElement("div");
+        translateDiv.id = "google_translate_element";
+        document.body.appendChild(translateDiv);
+    }
 });
+
+// 4. Google Translate Initialization Callback (English, Spanish, Chinese)
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
