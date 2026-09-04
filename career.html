@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Translate Script API -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
         .career-form-container {
             max-width: 850px;
@@ -98,6 +100,7 @@
                 <a href="weddings.html">Weddings</a>
                 <a href="shop.html">Gift Shop</a>
                 <a href="career.html" class="active">Join Our Team</a>
+                <a href="tablet-order.html">Tablet Order</a>
                 <a href="contact.html" class="btn-nav">Contact</a>
             </nav>
         </div>
@@ -185,7 +188,7 @@
                 const fileSizeMB = input.files[0].size / (1024 * 1024);
                 if (fileSizeMB > 10) {
                     alert("File size exceeds 10MB! Please select a smaller resume file.");
-                    input.value = ""; // Clear the selection
+                    input.value = "";
                 }
             }
         }
@@ -201,11 +204,9 @@
             const resumeInput = document.getElementById("resumeFile");
             const fileName = resumeInput.files[0] ? resumeInput.files[0].name : "No file attached";
 
-            // Display success banner
             document.getElementById("successBanner").style.display = "block";
             window.scrollTo({ top: 200, behavior: 'smooth' });
 
-            // Construct mailto link to route directly to workhere1@hitchingpost1.com
             const recipient = "workhere1@hitchingpost1.com";
             const subject = encodeURIComponent(`Job Application: ${position} - ${name}`);
             const body = encodeURIComponent(
@@ -219,7 +220,6 @@
                 `(Note: Please remember to attach your resume file directly in your email client before hitting send.)`
             );
 
-            // Open mail client after brief delay so applicant sees confirmation banner
             setTimeout(() => {
                 window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
             }, 1500);
